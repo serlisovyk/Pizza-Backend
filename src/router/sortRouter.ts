@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import SortController from '../controllers/SortController.js'
-import asyncHandler from '../middlewares/asyncHandler.middleware.js'
+import asyncHandler from '../middlewares/asyncHandlerMiddleware.js'
 
 const router = Router()
 

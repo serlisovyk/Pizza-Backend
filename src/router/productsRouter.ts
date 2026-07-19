@@ -1,8 +1,8 @@
 import { Router } from 'express'
 import ProductsController from '../controllers/ProductsController.js'
 import { VALIDATION_TARGET } from '../constants/constants.js'
-import asyncHandler from '../middlewares/asyncHandler.middleware.js'
-import { validate } from '../middlewares/validate.middleware.js'
+import asyncHandler from '../middlewares/asyncHandlerMiddleware.js'
+import { validate } from '../middlewares/validateMiddleware.js'
 import {
   productListQuerySchema,
   productParamsSchema,

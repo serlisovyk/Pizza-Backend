@@ -7,13 +7,6 @@ import {
   productParamsSchema,
 } from '../schemas/productsSchema.js'
 
-export interface QueryParams {
-  category?: string
-  search?: string
-  sortBy?: SortOptions
-  page?: number
-}
-
 export interface ICategory extends Document {
   name: string
 }

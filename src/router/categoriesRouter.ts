@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import CategoriesController from '../controllers/CategoriesController.js'
-import asyncHandler from '../middlewares/asyncHandler.middleware.js'
+import asyncHandler from '../middlewares/asyncHandlerMiddleware.js'
 
 const router = Router()
 
