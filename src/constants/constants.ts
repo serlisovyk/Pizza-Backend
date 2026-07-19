@@ -14,3 +14,15 @@ export const ERROR_CODE = {
   NOT_FOUND: 'NOT_FOUND',
   VALIDATION_ERROR: 'VALIDATION_ERROR',
 } as const
+
+export const ERROR_MESSAGE = {
+  PRODUCT_NOT_FOUND: 'Product not found',
+  UNEXPECTED_ERROR: 'Unexpected error',
+  VALIDATED_REQUEST_DATA_IS_MISSING: 'Validated request data is missing',
+} as const
+
+export const PRODUCTS_PAGE_LIMIT = 4
+
+export const SORT_FIELDS = ['title', 'price', 'rating'] as const
+
+export const ESCAPE_REGEX = /[.*+?^${}()|[\]\\]/g

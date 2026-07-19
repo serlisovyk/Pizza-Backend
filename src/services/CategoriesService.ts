@@ -1,14 +1,9 @@
-import AppError from '../error/AppError.js'
-import CategoryModel from '../models/CategoriesModel.js'
-import { ICategory } from '../types/types'
+import CategoriesRepository from '../repositories/CategoriesRepository.js'
+import { Category } from '../types/types'
 
 class CategoryService {
-  async getAllCategories(): Promise<ICategory[]> {
-    const categories: ICategory[] = await CategoryModel.find()
-
-    if (!categories.length) throw AppError.notFound('No categories found')
-
-    return categories
+  async getAllCategories(): Promise<Category[]> {
+    return CategoriesRepository.findAll()
   }
 }
 

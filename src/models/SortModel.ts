@@ -1,7 +1,8 @@
 import { model, Schema } from 'mongoose'
-import { ISort } from '../types/types'
+import { SORT_FIELDS } from '../constants/constants.js'
+import { Sort } from '../types/types'
 
-const sortSchema = new Schema<ISort>(
+const sortSchema = new Schema<Sort>(
   {
     _id: {
       type: Schema.Types.ObjectId,
@@ -18,12 +19,12 @@ const sortSchema = new Schema<ISort>(
       required: true,
       unique: true,
       trim: true,
-      enum: ['rating', 'price', 'title'],
+      enum: SORT_FIELDS,
     },
   },
-  { collection: 'sort' }
+  { collection: 'sort' },
 )
 
-const Sort = model<ISort>('Sort', sortSchema)
+const Sort = model<Sort>('Sort', sortSchema)
 
 export default Sort

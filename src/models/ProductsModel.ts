@@ -1,7 +1,7 @@
 import { Schema, model } from 'mongoose'
-import { IProduct } from '../types/types'
+import { Product } from '../types/types'
 
-const productSchema = new Schema<IProduct>({
+const productSchema = new Schema<Product>({
   _id: {
     type: Schema.Types.ObjectId,
     auto: true,
@@ -47,6 +47,6 @@ const productSchema = new Schema<IProduct>({
   },
 })
 
-const Product = model<IProduct>('Product', productSchema)
+const Product = model<Product>('Product', productSchema)
 
 export default Product

@@ -1,14 +1,9 @@
-import AppError from '../error/AppError.js'
-import SortModel from '../models/SortModel.js'
-import { ISort } from '../types/types'
+import SortRepository from '../repositories/SortRepository.js'
+import { Sort } from '../types/types'
 
 class SortService {
-  async getAllSorts(): Promise<ISort[]> {
-    const sorts: ISort[] = await SortModel.find()
-
-    if (!sorts.length) throw AppError.notFound('No sorts found')
-
-    return sorts
+  async getAllSorts(): Promise<Sort[]> {
+    return SortRepository.findAll()
   }
 }
 

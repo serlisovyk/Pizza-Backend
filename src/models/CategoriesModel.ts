@@ -1,7 +1,7 @@
 import { model, Schema } from 'mongoose'
-import { ICategory } from '../types/types'
+import { Category } from '../types/types'
 
-const categorySchema = new Schema<ICategory>({
+const categorySchema = new Schema<Category>({
   _id: {
     type: Schema.Types.ObjectId,
     auto: true,
@@ -14,6 +14,6 @@ const categorySchema = new Schema<ICategory>({
   },
 })
 
-const Category = model<ICategory>('Category', categorySchema)
+const Category = model<Category>('Category', categorySchema)
 
 export default Category

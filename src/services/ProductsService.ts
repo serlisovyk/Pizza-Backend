@@ -1,34 +1,17 @@
+import { ERROR_MESSAGE } from '../constants/constants.js'
 import AppError from '../error/AppError.js'
-import ProductsModel from '../models/ProductsModel.js'
-import { ProductListQuery, SortOptions } from '../types/types'
+import ProductsRepository from '../repositories/ProductsRepository.js'
+import { ProductListQuery } from '../types/types'
 
 class ProductsService {
   async getAllProducts(query: ProductListQuery) {
-    const { category, search, sortBy, page } = query
-
-    const filter: { [key: string]: any } = {}
-
-    const options = {
-      sort: {} as Record<SortOptions, number>,
-      skip: (page - 1) * 4,
-      limit: 4,
-    }
-
-    if (category && category !== 'Все') filter.category = category
-    if (search) filter.$or = [{ title: { $regex: search, $options: 'i' } }]
-    if (sortBy) options.sort[sortBy] = -1
-
-    const paginatedProducts = await ProductsModel.find(filter, null, options)
-
-    if (!paginatedProducts.length) throw AppError.notFound('No products found')
-
-    return paginatedProducts
+    return ProductsRepository.findAll(query)
   }
 
   async getProductById(id: string) {
-    const product = await ProductsModel.findById(id)
+    const product = await ProductsRepository.findById(id)
 
-    if (!product) throw AppError.notFound('Product not found')
+    if (!product) throw AppError.notFound(ERROR_MESSAGE.PRODUCT_NOT_FOUND)
 
     return product
   }
