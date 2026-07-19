@@ -1,10 +1,10 @@
 import ApiError from '../error/ApiError.js'
 import ProductsModel from '../models/ProductsModel.js'
-import { QueryParams, SortOptions } from '../types/types'
+import { ProductListQuery, SortOptions } from '../types/types'
 
 class ProductsService {
-  async getAllProducts(query: QueryParams, page: number = 1) {
-    const { category, search, sortBy } = query
+  async getAllProducts(query: ProductListQuery) {
+    const { category, search, sortBy, page } = query
 
     const filter: { [key: string]: any } = {}
 

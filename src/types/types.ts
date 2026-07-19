@@ -1,4 +1,10 @@
 import { Document } from 'mongoose'
+import { z } from 'zod'
+import { VALIDATION_TARGET } from '../constants/constants.js'
+import {
+  productListQuerySchema,
+  productParamsSchema,
+} from '../schemas/productsSchema.js'
 
 export interface QueryParams {
   category?: string
@@ -29,3 +35,9 @@ export interface ISort extends Document {
 }
 
 export type SortOptions = 'title' | 'price' | 'rating'
+
+export type VALIDATION_TARGET =
+  (typeof VALIDATION_TARGET)[keyof typeof VALIDATION_TARGET]
+
+export type ProductListQuery = z.infer<typeof productListQuerySchema>
+export type ProductParams = z.infer<typeof productParamsSchema>
