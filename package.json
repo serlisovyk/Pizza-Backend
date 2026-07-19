@@ -1,12 +1,13 @@
 {
-  "name": "server",
+  "name": "pizza-server",
   "version": "1.0.0",
-  "main": "src/app.js",
+  "description": "Rest API server for pizza ordering app",
+  "main": "src/main.js",
   "type": "module",
   "scripts": {
-    "dev": "tsc && nodemon dist/app.js",
+    "dev": "tsc && nodemon dist/main.js",
     "build": "tsc",
-    "start": "node dist/app.js"
+    "start": "node dist/main.js"
   },
   "author": "Serhii Lisovyk",
   "license": "ISC",
