@@ -30,6 +30,7 @@ validation, configuration, and centralized error handling.
 - Helmet
 - CORS
 - Prettier
+- Yarn
 
 ## 📁 Project Structure
 
