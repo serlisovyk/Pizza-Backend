@@ -1,5 +1,7 @@
 export const ID_CHECK_REGEX = /^[0-9a-fA-F]{24}$/
 
+export const ESCAPE_REGEX = /[.*+?^${}()|[\]\\]/g
+
 export const VALIDATION_TARGET = {
   Query: 'query',
   Params: 'params',
@@ -25,4 +27,8 @@ export const PRODUCTS_PAGE_LIMIT = 4
 
 export const SORT_FIELDS = ['title', 'price', 'rating'] as const
 
-export const ESCAPE_REGEX = /[.*+?^${}()|[\]\\]/g
+export const MODEL_NAME = {
+  PRODUCT: 'Product',
+  CATEGORY: 'Category',
+  SORT: 'Sort',
+} as const

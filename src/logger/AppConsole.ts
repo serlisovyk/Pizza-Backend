@@ -14,9 +14,7 @@ class AppConsole {
   static error(message: string, error?: unknown) {
     console.error(`❌ ${message}`)
 
-    if (error) {
-      console.error(error)
-    }
+    if (error) console.error(error)
   }
 }
 

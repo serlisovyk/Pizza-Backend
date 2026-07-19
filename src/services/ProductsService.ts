@@ -1,6 +1,6 @@
-import { ERROR_MESSAGE } from '../constants/constants.js'
 import AppError from '../error/AppError.js'
 import ProductsRepository from '../repositories/ProductsRepository.js'
+import { ERROR_MESSAGE } from '../constants/constants.js'
 import { ProductListQuery } from '../types/types'
 
 class ProductsService {

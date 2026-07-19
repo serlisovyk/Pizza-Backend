@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express'
-import { ERROR_CODE, ERROR_MESSAGE } from '../constants/constants.js'
 import AppError from '../error/AppError.js'
+import { ERROR_CODE, ERROR_MESSAGE } from '../constants/constants.js'
 
 export default function errorHandler(
   err: unknown,

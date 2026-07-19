@@ -1,6 +1,6 @@
 import { Request } from 'express'
-import { ERROR_MESSAGE } from '../constants/constants.js'
 import AppError from '../error/AppError.js'
+import { ERROR_MESSAGE } from '../constants/constants.js'
 import { VALIDATION_TARGET } from '../types/types.js'
 
 export default function getValidatedRequestData<T>(

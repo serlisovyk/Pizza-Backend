@@ -1,6 +1,6 @@
 import { connect } from 'mongoose'
-import AppConsole from './logger/AppConsole.js'
 import CONFIG from './config/config.js'
+import AppConsole from './logger/AppConsole.js'
 
 export default async function connectDB() {
   try {

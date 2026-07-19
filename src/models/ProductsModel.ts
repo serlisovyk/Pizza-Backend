@@ -1,4 +1,5 @@
 import { Schema, model } from 'mongoose'
+import { MODEL_NAME } from '../constants/constants.js'
 import { Product } from '../types/types'
 
 const productSchema = new Schema<Product>({
@@ -47,6 +48,6 @@ const productSchema = new Schema<Product>({
   },
 })
 
-const Product = model<Product>('Product', productSchema)
+const Product = model<Product>(MODEL_NAME.PRODUCT, productSchema)
 
 export default Product

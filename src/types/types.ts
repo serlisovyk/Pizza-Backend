@@ -2,14 +2,14 @@ import { NextFunction, Request, Response } from 'express'
 import { Document, QueryFilter } from 'mongoose'
 import { z } from 'zod'
 import {
+  productListQuerySchema,
+  productParamsSchema,
+} from '../schemas/productsSchema.js'
+import {
   ERROR_CODE,
   SORT_FIELDS,
   VALIDATION_TARGET,
 } from '../constants/constants.js'
-import {
-  productListQuerySchema,
-  productParamsSchema,
-} from '../schemas/productsSchema.js'
 
 export interface Category extends Document {
   name: string

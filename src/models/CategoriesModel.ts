@@ -1,4 +1,5 @@
 import { model, Schema } from 'mongoose'
+import { MODEL_NAME } from '../constants/constants.js'
 import { Category } from '../types/types'
 
 const categorySchema = new Schema<Category>({
@@ -14,6 +15,6 @@ const categorySchema = new Schema<Category>({
   },
 })
 
-const Category = model<Category>('Category', categorySchema)
+const Category = model<Category>(MODEL_NAME.CATEGORY, categorySchema)
 
 export default Category

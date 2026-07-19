@@ -1,5 +1,5 @@
 import { model, Schema } from 'mongoose'
-import { SORT_FIELDS } from '../constants/constants.js'
+import { SORT_FIELDS, MODEL_NAME } from '../constants/constants.js'
 import { Sort } from '../types/types'
 
 const sortSchema = new Schema<Sort>(
@@ -25,6 +25,6 @@ const sortSchema = new Schema<Sort>(
   { collection: 'sort' },
 )
 
-const Sort = model<Sort>('Sort', sortSchema)
+const Sort = model<Sort>(MODEL_NAME.SORT, sortSchema)
 
 export default Sort

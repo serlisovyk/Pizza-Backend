@@ -1,8 +1,8 @@
 import { Request, Response } from 'express'
-import { VALIDATION_TARGET } from '../constants/constants.js'
 import ProductsService from '../services/ProductsService.js'
-import { ProductListQuery, ProductParams } from '../types/types.js'
 import getValidatedRequestData from '../utils/getValidatedRequestData.js'
+import { VALIDATION_TARGET } from '../constants/constants.js'
+import { ProductListQuery, ProductParams } from '../types/types.js'
 
 class ProductsController {
   async getAll(req: Request, res: Response): Promise<void> {
@@ -10,6 +10,7 @@ class ProductsController {
       req,
       VALIDATION_TARGET.Query,
     )
+
     const paginatedProducts = await ProductsService.getAllProducts(query)
 
     res.status(200).json(paginatedProducts)
@@ -20,6 +21,7 @@ class ProductsController {
       req,
       VALIDATION_TARGET.Params,
     )
+
     const singleProduct = await ProductsService.getProductById(params.id)
 
     res.status(200).json(singleProduct)
