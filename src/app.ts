@@ -14,7 +14,6 @@ app.use(express.json())
 app.use(helmet())
 app.use('/', router)
 
-// @ts-ignore
 app.use(errorHandler)
 
 connectDB()
