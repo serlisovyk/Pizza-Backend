@@ -7,7 +7,9 @@
   "scripts": {
     "dev": "tsc && nodemon dist/main.js",
     "build": "tsc",
-    "start": "node dist/main.js"
+    "start": "node dist/main.js",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check"
   },
   "author": "Serhii Lisovyk",
   "license": "ISC",
@@ -24,6 +26,7 @@
     "@types/express": "^5.0.6",
     "@types/node": "^26.1.1",
     "nodemon": "^3.1.14",
+    "prettier": "^3.9.5",
     "typescript": "^7.0.2"
   }
 }

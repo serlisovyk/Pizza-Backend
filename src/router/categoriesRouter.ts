@@ -1,8 +1,9 @@
 import { Router } from 'express'
 import CategoriesController from '../controllers/CategoriesController.js'
+import asyncHandler from '../middlewares/asyncHandler.middleware.js'
 
 const router = Router()
 
-router.get('/', CategoriesController.getAll)
+router.get('/', asyncHandler(CategoriesController.getAll))
 
 export default router

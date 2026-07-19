@@ -1,4 +1,4 @@
-import ApiError from '../error/ApiError.js'
+import AppError from '../error/AppError.js'
 import ProductsModel from '../models/ProductsModel.js'
 import { ProductListQuery, SortOptions } from '../types/types'
 
@@ -20,7 +20,7 @@ class ProductsService {
 
     const paginatedProducts = await ProductsModel.find(filter, null, options)
 
-    if (!paginatedProducts.length) throw ApiError.notFound('No products found')
+    if (!paginatedProducts.length) throw AppError.notFound('No products found')
 
     return paginatedProducts
   }
@@ -28,7 +28,7 @@ class ProductsService {
   async getProductById(id: string) {
     const product = await ProductsModel.findById(id)
 
-    if (!product) throw ApiError.notFound('Product not found')
+    if (!product) throw AppError.notFound('Product not found')
 
     return product
   }

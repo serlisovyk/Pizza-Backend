@@ -1,6 +1,6 @@
 class AppConsole {
   static info(message: string) {
-    console.log(`ℹ️  ${message}`)
+    console.log(`ℹ️ ${message}`)
   }
 
   static success(message: string) {
@@ -8,7 +8,7 @@ class AppConsole {
   }
 
   static warn(message: string) {
-    console.warn(`⚠️  ${message}`)
+    console.warn(`⚠️ ${message}`)
   }
 
   static error(message: string, error?: unknown) {

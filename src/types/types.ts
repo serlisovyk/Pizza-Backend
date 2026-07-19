@@ -1,6 +1,7 @@
+import { NextFunction, Request, Response } from 'express'
 import { Document } from 'mongoose'
 import { z } from 'zod'
-import { VALIDATION_TARGET } from '../constants/constants.js'
+import { ERROR_CODE, VALIDATION_TARGET } from '../constants/constants.js'
 import {
   productListQuerySchema,
   productParamsSchema,
@@ -38,6 +39,12 @@ export type SortOptions = 'title' | 'price' | 'rating'
 
 export type VALIDATION_TARGET =
   (typeof VALIDATION_TARGET)[keyof typeof VALIDATION_TARGET]
+
+export type ERROR_CODE = (typeof ERROR_CODE)[keyof typeof ERROR_CODE]
+
+export interface AsyncController {
+  (req: Request, res: Response, next: NextFunction): Promise<void>
+}
 
 export type ProductListQuery = z.infer<typeof productListQuerySchema>
 export type ProductParams = z.infer<typeof productParamsSchema>

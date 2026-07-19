@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from 'express'
-import ApiError from '../error/ApiError.js'
+import { ERROR_CODE } from '../constants/constants.js'
+import AppError from '../error/AppError.js'
 
 export default function errorHandler(
   err: unknown,
@@ -7,7 +8,7 @@ export default function errorHandler(
   res: Response,
   __: NextFunction,
 ) {
-  if (err instanceof ApiError) {
+  if (err instanceof AppError) {
     const { status, code, message, fields } = err
 
     return res.status(status).json({
@@ -21,7 +22,7 @@ export default function errorHandler(
 
   return res.status(500).json({
     error: {
-      code: 'INTERNAL_SERVER_ERROR',
+      code: ERROR_CODE.INTERNAL_SERVER_ERROR,
       message: 'Unexpected error',
     },
   })

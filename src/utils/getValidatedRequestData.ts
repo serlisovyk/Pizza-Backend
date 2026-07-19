@@ -1,5 +1,5 @@
 import { Request } from 'express'
-import ApiError from '../error/ApiError.js'
+import AppError from '../error/AppError.js'
 import { VALIDATION_TARGET } from '../types/types.js'
 
 export default function getValidatedRequestData<T>(
@@ -9,7 +9,7 @@ export default function getValidatedRequestData<T>(
   const data = req.validated?.[target]
 
   if (!data) {
-    throw ApiError.internal(`Validated ${target} data is missing`)
+    throw AppError.internal(`Validated ${target} data is missing`)
   }
 
   return data as T

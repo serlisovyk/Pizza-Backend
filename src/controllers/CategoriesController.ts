@@ -1,19 +1,11 @@
-import { NextFunction, Request, Response } from 'express'
-import ApiError from '../error/ApiError.js'
+import { Request, Response } from 'express'
 import CategoryService from '../services/CategoriesService.js'
 
 class CategoriesController {
-  async getAll(req: Request, res: Response, next: NextFunction): Promise<void> {
-    try {
-      const categories = await CategoryService.getAllCategories()
-      res.status(200).json(categories)
-    } catch (err) {
-      next(
-        err instanceof ApiError
-          ? err
-          : ApiError.badRequest('An unknown error occurred')
-      )
-    }
+  async getAll(_: Request, res: Response): Promise<void> {
+    const categories = await CategoryService.getAllCategories()
+
+    res.status(200).json(categories)
   }
 }
 
