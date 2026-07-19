@@ -1,11 +1,11 @@
 import { Request } from 'express'
 import AppError from '../error/AppError.js'
-import { ERROR_MESSAGE } from '../constants/constants.js'
-import { VALIDATION_TARGET } from '../types/types.js'
+import { ERROR_MESSAGE } from '../constants/errorConstants.js'
+import type { ValidationTarget } from '../types/requestTypes.js'
 
 export default function getValidatedRequestData<T>(
   req: Request,
-  target: VALIDATION_TARGET,
+  target: ValidationTarget,
 ): T {
   const data = req.validated?.[target]
 

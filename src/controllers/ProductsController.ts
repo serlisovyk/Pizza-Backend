@@ -1,8 +1,8 @@
 import { Request, Response } from 'express'
 import ProductsService from '../services/ProductsService.js'
 import getValidatedRequestData from '../utils/getValidatedRequestData.js'
-import { VALIDATION_TARGET } from '../constants/constants.js'
-import { ProductListQuery, ProductParams } from '../types/types.js'
+import { VALIDATION_TARGET } from '../constants/validationConstants.js'
+import type { ProductListQuery, ProductParams } from '../types/requestTypes.js'
 
 class ProductsController {
   async getAll(req: Request, res: Response): Promise<void> {

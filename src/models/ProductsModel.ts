@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose'
-import { MODEL_NAME } from '../constants/constants.js'
-import { Product } from '../types/types'
+import { MODEL_NAME } from '../constants/domainConstants.js'
+import type { Product } from '../types/modelTypes.js'
 
 const productSchema = new Schema<Product>({
   _id: {

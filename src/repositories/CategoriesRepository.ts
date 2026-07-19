@@ -2,7 +2,7 @@ import CategoryModel from '../models/CategoriesModel.js'
 
 class CategoriesRepository {
   findAll() {
-    return CategoryModel.find()
+    return CategoryModel.find().lean()
   }
 }
 

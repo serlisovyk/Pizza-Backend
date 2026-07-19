@@ -1,5 +1,5 @@
 import CategoriesRepository from '../repositories/CategoriesRepository.js'
-import { Category } from '../types/types'
+import type { Category } from '../types/modelTypes.js'
 
 class CategoryService {
   async getAllCategories(): Promise<Category[]> {

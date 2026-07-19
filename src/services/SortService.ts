@@ -1,5 +1,5 @@
 import SortRepository from '../repositories/SortRepository.js'
-import { Sort } from '../types/types'
+import type { Sort } from '../types/modelTypes.js'
 
 class SortService {
   async getAllSorts(): Promise<Sort[]> {

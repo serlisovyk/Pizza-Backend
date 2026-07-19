@@ -6,7 +6,7 @@ import {
   productListQuerySchema,
   productParamsSchema,
 } from '../schemas/productsSchema.js'
-import { VALIDATION_TARGET } from '../constants/constants.js'
+import { VALIDATION_TARGET } from '../constants/validationConstants.js'
 
 const router = Router()
 

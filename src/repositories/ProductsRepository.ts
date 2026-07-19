@@ -1,21 +1,25 @@
 import ProductsModel from '../models/ProductsModel.js'
 import { checkEscapeRegex } from '../utils/checkEscapeRegex.js'
-import { PRODUCTS_PAGE_LIMIT } from '../constants/constants.js'
-import { ProductListQuery, ProductsFilter, ProductsOptions } from '../types/types.js'
+import { PRODUCTS_PAGE_LIMIT } from '../constants/domainConstants.js'
+import type {
+  ProductListQuery,
+  ProductsFilter,
+  ProductsOptions,
+} from '../types/requestTypes.js'
 
 class ProductsRepository {
   findAll(query: ProductListQuery) {
     const filter = this.buildProductsFilter(query)
     const { skip, limit, sort } = this.buildProductsOptions(query)
 
-    const productsQuery = ProductsModel.find(filter).skip(skip).limit(limit)
+    const productsQuery = ProductsModel.find(filter).skip(skip).limit(limit).lean()
     if (sort) productsQuery.sort(sort)
 
     return productsQuery
   }
 
   findById(id: string) {
-    return ProductsModel.findById(id)
+    return ProductsModel.findById(id).lean()
   }
 
   private buildProductsOptions(query: ProductListQuery): ProductsOptions {

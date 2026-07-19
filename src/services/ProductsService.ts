@@ -1,7 +1,7 @@
 import AppError from '../error/AppError.js'
 import ProductsRepository from '../repositories/ProductsRepository.js'
-import { ERROR_MESSAGE } from '../constants/constants.js'
-import { ProductListQuery } from '../types/types'
+import { ERROR_MESSAGE } from '../constants/errorConstants.js'
+import type { ProductListQuery } from '../types/requestTypes.js'
 
 class ProductsService {
   async getAllProducts(query: ProductListQuery) {

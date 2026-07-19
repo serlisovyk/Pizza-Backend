@@ -1,6 +1,6 @@
 import { model, Schema } from 'mongoose'
-import { SORT_FIELDS, MODEL_NAME } from '../constants/constants.js'
-import { Sort } from '../types/types'
+import { SORT_FIELDS, MODEL_NAME } from '../constants/domainConstants.js'
+import type { Sort } from '../types/modelTypes.js'
 
 const sortSchema = new Schema<Sort>(
   {

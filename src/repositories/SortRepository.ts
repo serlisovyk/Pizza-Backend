@@ -2,7 +2,7 @@ import SortModel from '../models/SortModel.js'
 
 class SortRepository {
   findAll() {
-    return SortModel.find()
+    return SortModel.find().lean()
   }
 }
 

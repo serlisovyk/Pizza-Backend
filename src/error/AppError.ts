@@ -1,5 +1,5 @@
-import { ERROR_CODE } from '../constants/constants.js'
-import { ERROR_CODE as ErrorCode } from '../types/types.js'
+import { ERROR_CODE } from '../constants/errorConstants.js'
+import type { ErrorCode } from '../types/errorTypes.js'
 
 export default class AppError extends Error {
   status: number
