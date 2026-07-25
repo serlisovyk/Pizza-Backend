@@ -63,6 +63,16 @@ DB_URI=mongodb+srv://user:password@cluster.mongodb.net/database
 `PORT` is optional and defaults to `5000`.
 `DB_URI` is required.
 
+## Vercel Deployment
+
+The project includes `vercel.json` to avoid Vercel auto-selecting `src/app.ts`
+when multiple possible entrypoints exist. All incoming requests are routed to
+`src/main.ts`, so the normal bootstrap flow runs first:
+
+```text
+src/main.ts -> connectDB() -> startServer(app)
+```
+
 ## 🚀 Scripts
 
 Install dependencies:
